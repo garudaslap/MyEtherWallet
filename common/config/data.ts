@@ -164,6 +164,16 @@ export const NETWORKS: { [key: string]: NetworkConfig } = {
     tokens: require('./tokens/rinkeby.json'),
     contracts: require('./contracts/rinkeby.json'),
     isTestnet: true
+  },
+  RSK: {
+    name: 'RSK',
+    unit: 'SBTC',
+    chainId: 33,
+    color: '#4B7C3E',
+    blockExplorer: makeExplorer('https://explorer.rsk.co'),
+    tokens: require('./tokens/rsk.json'),
+    contracts: require('./contracts/rsk.json'),
+    isTestnet: true
   }
 };
 
@@ -214,6 +224,12 @@ export const NODES: { [key: string]: NodeConfig } = {
     network: 'Rinkeby',
     service: 'infura.io',
     lib: new InfuraNode('https://rinkeby.infura.io/mew'),
+    estimateGas: false
+  },
+  rsk_rsk: {
+    network: 'RSK',
+    service: 'Nodo local',
+    lib: new RPCNode('http://localhost:4444'),
     estimateGas: false
   }
 };

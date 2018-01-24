@@ -33,6 +33,8 @@ export function networkIdToName(networkId: string | number): string {
       return 'Rinkeby';
     case '42':
       return 'Kovan';
+    case '14':
+      return 'Rsk';
     default:
       throw new Error(`Network ${networkId} is unsupported.`);
   }
