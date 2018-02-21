@@ -165,10 +165,20 @@ export const NETWORKS: { [key: string]: NetworkConfig } = {
     contracts: require('./contracts/rinkeby.json'),
     isTestnet: true
   },
-  RSK: {
-    name: 'RSK',
+  RSK_Test: {
+    name: 'RSK (Test)',
     unit: 'SBTC',
     chainId: 33,
+    color: '#4B7C3E',
+    blockExplorer: makeExplorer('https://explorer.rsk.co'),
+    tokens: require('./tokens/rsk.json'),
+    contracts: require('./contracts/rsk.json'),
+    isTestnet: true
+  },
+  RSK_Main: {
+    name: 'RSK (Main)',
+    unit: 'SBTC',
+    chainId: 31,
     color: '#4B7C3E',
     blockExplorer: makeExplorer('https://explorer.rsk.co'),
     tokens: require('./tokens/rsk.json'),
@@ -226,9 +236,15 @@ export const NODES: { [key: string]: NodeConfig } = {
     lib: new InfuraNode('https://rinkeby.infura.io/mew'),
     estimateGas: false
   },
-  rsk_rsk: {
-    network: 'RSK',
-    service: 'Nodo local',
+  rsk_test: {
+    network: 'RSK_Test',
+    service: 'Test Net',
+    lib: new RPCNode('http://localhost:4444'),
+    estimateGas: false
+  },
+  rsk_main: {
+    network: 'RSK_Main',
+    service: 'Main Net',
     lib: new RPCNode('http://localhost:4444'),
     estimateGas: false
   }
